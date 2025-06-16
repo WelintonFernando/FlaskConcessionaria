@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=KyivType+Sans:wght@400;700&display=swap');
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: radial-gradient(circle at 180% -180%, #4d3e1c 0%, #000 80%);
+    font-family: 'KyivType Sans', Arial, sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+.logo-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    max-width: 80vw;
+    opacity: 1;
+    z-index: 1;
+    filter: drop-shadow(0 0 32px #4d3e1c88);
+    pointer-events: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.logo {
+    width: 500px;
+    max-width: 40vw;
+    margin-bottom: 0;
+    filter: drop-shadow(0 0 32px #4d3e1c88);
+}
+
+.botoes {
+    position: absolute;
+    left: 5vw;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+    z-index: 2;
+}
+
+.botao {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    font-family: 'KyivType Sans', Arial, sans-serif;
+    padding: 18px 40px;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: 
+        transform 0.2s cubic-bezier(.4,2,.6,1),
+        box-shadow 0.2s,
+        color 0.2s,
+        text-shadow 0.2s;
+    box-shadow: none;
+    outline: none;
+    position: relative;
+    z-index: 1;
+    background: rgba(0,0,0,0.7);
+}
+
+.botao span {
+    color: #fff;
+    text-shadow: none;
+    transition: text-shadow 0.2s, color 0.2s;
+}
+
+.botao:hover, .botao:focus {
+    transform: scale(1.08) translateY(-4px);
+}
+
+.botao:active {
+    transform: scale(0.98) translateY(0);
+    transition: transform 0.08s;
+}
+
+.botao:hover span, .botao:focus span {
+    color: #fff;
+    text-shadow: 0 0 24px #e6c97a, 0 0 32px #fff, 0 0 2px #fff;
+}
+
+.botao:active span {
+    color: #fff;
+    text-shadow: 0 0 8px #e6c97a, 0 0 12px #fff, 0 0 1px #fff;
+    transition: text-shadow 0.1s, color 0.1s;
+}
+
+.botao:focus span {
+    color: #fff;
+    text-shadow: none;
+}
+
+.botao::after {
+    display: none;
+}
+
+.submenu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 32px;
+    margin-bottom: 8px;
+    transition: max-height 0.3s, opacity 0.3s;
+    overflow: hidden;
+}
+
+.submenu-btn {
+    font-size: 1.6rem;
+    padding: 10px 32px;
+    background: none;
+    border: none;
+    color: #fff;
+    border-radius: 30px;
+    cursor: pointer;
+    text-align: left;
+    background: rgba(0,0,0,0.5);
+    transition: background 0.2s;
+}
+
+.submenu-btn span {
+    font-size: 1.2em;
+}
+
+.submenu-btn:hover span, .submenu-btn:focus span {
+    color: #fff;
+    text-shadow: 0 0 16px #e6c97a, 0 0 24px #fff, 0 0 2px #fff;
+}

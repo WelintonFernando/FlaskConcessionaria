@@ -1,18 +1,23 @@
-import PyQt5
-from PyQt5 import QtWidgets, uic
-from PyQt5.QtWidgets import QApplication
-from src.model.class_menu import ClassMenu
+import flask
+from src.control.classe_conexao import Conexao
+
+"""
+CONEXÃO COM O BANCO DE DADOS
+"""
+
+conexao = Conexao("concessionaria", "root", "ifsp", "localhost", 3306)
+conexao.abrirConexao()
+
+"""
+FIM CONEXÃO COM O BANCO DE DADOS
+"""
 
 
-class App(QApplication):
-    def __init__(self, argv):
-        super(App, self).__init__(argv)
-        self.main_view = ClassMenu()
-        self.main_view.show()
+app = flask.Flask(__name__)
 
 
-if __name__ == "__main__":
-    import sys
-    app = App(sys.argv)
-    sys.exit(app.exec_())
 
+
+
+if __name__ == 'main':
+    app.run(debug=True)

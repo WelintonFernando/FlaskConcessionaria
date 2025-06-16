@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro: Veículo</title>
+    <link rel="stylesheet" href="../css/registro_despesa.css">
+</head>
+<body>
+    <h1 class="title">➤ Registro: Veículo</h1>
+    <div class="background-logo"></div>
+    <div class="container">
+        <div class="registros-header">
+            <span class="label">➤ Tabela de Registros</span>
+        </div>
+        <div class="tabela-wrapper">
+            <table class="tabela-registros">
+                <thead>
+                    <tr>
+                        <th>Modelo</th>
+                        <th>Placa</th>
+                        <th>Ano</th>
+                        <th>Fabricante</th>
+                        <th>Cor</th>
+                        <th>Preço FIPE</th>
+                        <th>Total Despesas</th>
+                        <th>Preço Venda</th>
+                        <th>Remover</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for veiculo in veiculos %}
+                    <tr>
+                        <td>{{ veiculo.modelo }}</td>
+                        <td>{{ veiculo.placa }}</td>
+                        <td>{{ veiculo.ano }}</td>
+                        <td>{{ veiculo.fabricante }}</td>
+                        <td>{{ veiculo.cor }}</td>
+                        <td>R$ {{ veiculo.preco_fipe }}</td>
+                        <td>R$ {{ veiculo.total_despesas }}</td>
+                        <td>R$ {{ veiculo.preco_venda }}</td>
+                        <td>
+                            <form method="POST" action="/remover_veiculo/{{ veiculo.id }}" style="display:inline;">
+                                <button type="submit" class="btn-remover" title="Remover">
+                                    <span class="icon-lixeira">🗑️</span>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="buttons">
+            <button class="btn" id="voltar" onclick="window.location.href='inicio.html'">◀ Voltar.</button>
+        </div>
+    </div>
+</body>
+</html>

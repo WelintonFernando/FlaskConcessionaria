@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro: Cliente</title>
+    <link rel="stylesheet" href="../css/registro_despesa.css">
+</head>
+<body>
+    <h1 class="title">➤ Registro: Cliente</h1>
+    <div class="background-logo"></div>
+    <div class="container">
+        <div class="registros-header">
+            <span class="label">➤ Tabela de Registros</span>
+        </div>
+        <div class="tabela-wrapper">
+            <table class="tabela-registros">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>UF</th>
+                        <th>Cidade</th>
+                        <th>CEP</th>
+                        <th>Endereço</th>
+                        <th>Remover</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for cliente in clientes %}
+                    <tr>
+                        <td>{{ cliente.nome }}</td>
+                        <td>{{ cliente.uf }}</td>
+                        <td>{{ cliente.cidade }}</td>
+                        <td>{{ cliente.cep }}</td>
+                        <td>{{ cliente.endereco }}</td>
+                        <td>
+                            <form method="POST" action="/remover_cliente/{{ cliente.id }}" style="display:inline;">
+                                <button type="submit" class="btn-remover" title="Remover">
+                                    <span class="icon-lixeira">🗑️</span>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="buttons">
+            <button class="btn" id="voltar" onclick="window.location.href='inicio.html'">◀ Voltar.</button>
+        </div>
+    </div>
+</body>
+</html>

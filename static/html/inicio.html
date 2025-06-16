@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VM Motors - Início</title>
+    <link rel="stylesheet" href="../css/inicio.css">
+    <style>
+        @keyframes submenuFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px) scaleY(0.7);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scaleY(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="../img/logo_vm_motors.png" alt="Logo VM Motors" class="logo-bg">
+    <div class="botoes">
+        <button class="botao" id="cadastroBtn"><span>➣ Cadastro & Registro</span></button>
+        <div class="submenu" id="submenuCadastro" style="display: none;">
+            <button class="botao submenu-btn"><span>➤ Cliente</span></button>
+            <button class="botao submenu-btn"><span>➤ Prestador</span></button>
+            <button class="botao submenu-btn"><span>➤ Veículo</span></button>
+            <button class="botao submenu-btn"><span>➤ Despesa</span></button>
+        </div>
+        <button class="botao" id="compraBtn"><span>➣ Compra & Venda</span></button>
+        <div class="submenu" id="submenuCompra" style="display: none;">
+            <button class="botao submenu-btn"><span>➤ Registro</span></button>
+            <button class="botao submenu-btn"><span>➤ Comprar</span></button>
+            <button class="botao submenu-btn"><span>➤ Vender</span></button>
+        </div>
+    </div>
+    <script src="../js/inicio.js"></script>
+</body>
+</html>

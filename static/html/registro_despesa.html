@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro: Despesa</title>
+    <link rel="stylesheet" href="../css/registro_despesa.css">
+</head>
+<body>
+    <h1 class="title">➤ Registro: Despesa</h1>
+    <div class="background-logo"></div>
+    <div class="container">
+        <div class="registros-header">
+            <span class="label">➤ Tabela de Registros</span>
+        </div>
+        <div class="tabela-wrapper">
+            <table class="tabela-registros">
+                <thead>
+                    <tr>
+                        <th>Placa</th>
+                        <th>Prestador</th>
+                        <th>Data</th>
+                        <th>Valor total</th>
+                        <th>Descrição</th>
+                        <th>Remover</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for despesa in despesas %}
+                    <tr>
+                        <td>{{ despesa.placa }}</td>
+                        <td>{{ despesa.prestador }}</td>
+                        <td>{{ despesa.data }}</td>
+                        <td>R$ {{ despesa.valor_total }}</td>
+                        <td>{{ despesa.descricao }}</td>
+                        <td>
+                            <form method="POST" action="/remover_despesa/{{ despesa.id }}" style="display:inline;">
+                                <button type="submit" class="btn-remover" title="Remover">
+                                    <span class="icon-lixeira">🗑️</span>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="buttons">
+            <button class="btn" id="voltar" onclick="window.location.href='inicio.html'">◀ Voltar.</button>
+        </div>
+    </div>
+</body>
+</html>

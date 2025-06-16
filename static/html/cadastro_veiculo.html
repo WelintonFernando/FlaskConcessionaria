@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro: Veículo</title>
+    <link rel="stylesheet" href="../css/cadastro_veiculo.css">
+</head>
+<h1 class="title">➣ Cadastro: Veículo</h1>
+<body>
+    <div class="background-logo"></div>
+    <div class="container">
+        <form class="form-cadastro">
+            <div class="row-group">
+                <div class="row-item">
+                    <label class="label" for="modelo">➤ Modelo</label>
+                    <input class="input" type="text" id="modelo" name="modelo" autocomplete="off">
+                </div>
+                <div class="row-item">
+                    <label class="label" for="placa">➤ Placa</label>
+                    <input class="input" type="text" id="placa" name="placa" autocomplete="off">
+                </div>
+            </div>
+            <div class="row-group">
+                <div class="row-item">
+                    <label class="label" for="ano">➤ Ano</label>
+                    <input class="input" type="text" id="ano" name="ano" autocomplete="off">
+                </div>
+                <div class="row-item">
+                    <label class="label" for="fabricante">➤ Fabricante</label>
+                    <input class="input" type="text" id="fabricante" name="fabricante" autocomplete="off">
+                </div>
+                <div class="row-item">
+                    <label class="label" for="cor">➤ Cor</label>
+                    <input class="input" type="text" id="cor" name="cor" autocomplete="off">
+                </div>
+            </div>
+            <div class="row-group">
+                <div class="row-item">
+                    <label class="label" for="preco_fipe">➤ Preço FIPE</label>
+                    <div class="input-group"><span class="input-prefix">R$</span><input class="input" type="text" id="preco_fipe" name="preco_fipe" autocomplete="off" style="padding-left:3vw;"></div>
+                </div>
+                <div class="row-item">
+                    <label class="label" for="total_despesas">➤ Total Despesas</label>
+                    <div class="input-group"><span class="input-prefix">R$</span><input class="input" type="text" id="total_despesas" name="total_despesas" autocomplete="off" style="padding-left:3vw;"></div>
+                </div>
+            </div>
+            <div class="row-group">
+                <div class="row-item" style="flex: 1 1 100%;">
+                    <label class="label" for="preco_venda">➤ Preço Venda</label>
+                    <div class="input-group"><span class="input-prefix">R$</span><input class="input" type="text" id="preco_venda" name="preco_venda" autocomplete="off" style="padding-left:3vw;"></div>
+                </div>
+            </div>
+        </form>
+        <div class="buttons">
+            <button class="btn" id="voltar">⮘ Voltar.</button>
+            <div class="right-btns">
+                <button class="btn" id="registro">Registro. ⮚</button>
+                <button class="btn" id="confirmar">Confirmar. ⮚</button>
+            </div>
+        </div>
+    </div>
+    <script src="../js/cadastro_veiculo.js"></script>
+</body>
+</html>
